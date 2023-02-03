@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Popular = () => {
   const [populars, setPopulars] = useState([]);
@@ -8,11 +9,9 @@ const Popular = () => {
     axios
       .get(`${process.env.REACT_APP_BACKEND}/product`)
       .then(function (response) {
-        // handle success
         setPopulars(response.data.data);
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
       });
   }, []);
@@ -35,7 +34,7 @@ const Popular = () => {
               return (
                 <div class="col-lg-3 col-xl-3 col-xxl-2 col-md-4 col-sm-12 p-0">
                   <div class="card">
-                    <a class="btn-card-product" href="/pages/detailProduct.html">
+                    <Link class="btn-card-product" to={`/product/${item.id_product}`}>
                       <img class="card-image" crossOrigin="anonymous" src={item.photo} alt="..." />
                       <div class="card-body">
                         <h5 class="title-product mb-1">{item.name}</h5>
@@ -61,7 +60,7 @@ const Popular = () => {
                           <span>(10)</span>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               );

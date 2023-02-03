@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const ModalProduct = () => {
+const ModalUpdate = ({ product }) => {
   const token = localStorage.getItem('token');
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
 
   const [dataProduct, setDataProduct] = useState({
     name: '',
@@ -15,6 +13,8 @@ const ModalProduct = () => {
     description: '',
     photo: '',
   });
+
+  console.log(dataProduct);
 
   const handleUpload = (e) => {
     setDataProduct((prev) => {
@@ -41,7 +41,7 @@ const ModalProduct = () => {
     formData.append('id_categories', 'c123b284-4429-4d3c-895e-8829f26804d8');
 
     axios
-      .post(`${process.env.REACT_APP_BACKEND}/product`, formData, {
+      .put(`${process.env.REACT_APP_BACKEND}/product/${product.id_product}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           Authorization: `Bearer ${token}`,
@@ -50,50 +50,45 @@ const ModalProduct = () => {
       .then((res) => {
         console.log(res);
         alert('product created');
-        setShow(false);
       })
       .catch((err) => {
         console.log(err);
         alert(err);
-        setShow(false);
       });
   };
 
   return (
     <>
-      <button type="button" className="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#Create">
-        Create Product
-      </button>
-
-      <div className="modal fade" id="Create" tabindex="-1" aria-labelledby="CreateLabel" aria-hidden="true">
+      <div className="modal fade" id={`update${product.id_product}`} tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="CreateLabel">
-                Create Product
+              <h1 className="modal-title fs-5" id="updateLabel">
+                Update Product
               </h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <form onSubmit={handleSubmit}>
               <div className="modal-body">
                 <div className="mb-3 w-100">
-                  <input className="form-control" type="text" placeholder="name" name="name" value={dataProduct.name} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="name" name="name" value={product.name} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="price" name="price" value={dataProduct.price} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="price" name="price" value={product.price} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="size" name="size" value={dataProduct.size} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="size" name="size" value={product.size} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="color" name="color" value={dataProduct.color} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="color" name="color" value={product.color} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="stock" name="stock" value={dataProduct.stock} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="stock" name="stock" value={product.stock} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
@@ -101,16 +96,16 @@ const ModalProduct = () => {
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="description" name="description" value={dataProduct.description} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="description" name="description" value={product.description} onChange={handleChange} />
                 </div>
               </div>
 
               <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={handleClose} data-bs-dismiss="modal">
+                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button type="submit" className="btn btn-primary">
-                  Create
+                <button type="submit" className="btn btn-success">
+                  Update
                 </button>
               </div>
             </form>
@@ -121,4 +116,4 @@ const ModalProduct = () => {
   );
 };
 
-export default ModalProduct;
+export default ModalUpdate;
