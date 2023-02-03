@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../../Assets/css/style.css';
 import Logo from '../../Assets/images/icon/logo.png';
 import axios from 'axios';
@@ -33,9 +33,9 @@ const FormLogin = () => {
           <div className="row justify-content-center text-center">
             <div className="col-lg-6 col-xl-4 col-md-8 col-sm-10">
               <div className="align-content-center">
-                <a href="/index.html">
+                <Link to={`/home`}>
                   <img className="img-logo" src={Logo} alt="Logo-Blanja" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

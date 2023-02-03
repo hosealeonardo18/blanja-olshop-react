@@ -27,10 +27,10 @@ const Navbar = () => {
       <header id="navbar" className="sticky-top">
         <nav className="navbar navbar-expand-lg bg-light">
           <div className="container">
-            <a className="navbar-brand d-flex align-items-center">
+            <Link to={`/home`} className="navbar-brand d-flex align-items-center">
               <img src={logo} alt="Logo" className="d-inline-block align-text-top me-3" />
               Blanja
-            </a>
+            </Link>
 
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

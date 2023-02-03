@@ -7,7 +7,9 @@ const ModalProduct = () => {
   const handleClose = () => setShow(false);
   const [saveImage, setSaveImage] = useState(null);
 
-  const [data, setData] = useState({
+  const [photo, setPhoto] = useState(null);
+
+  const [formData, setFormData] = useState({
     nama: '',
     price: '',
     size: '',
@@ -19,48 +21,62 @@ const ModalProduct = () => {
 
   const handleUpload = (e) => {
     setPhoto(e.target.files[0]);
+    formData.append('photo', photo);
     const uploader = e.target.files[0];
     setSaveImage(uploader);
   };
 
-  const [photo, setPhoto] = useState(null);
-
   const handleChange = (e) => {
-    setData({
-      ...data,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
     });
-    console.log(data);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('name', data.name);
-    formData.append('price', data.price);
-    formData.append('size', data.size);
-    formData.append('color', data.color);
-    formData.append('stock', data.stock);
-    formData.append('photo', saveImage);
-    formData.append('description', data.description);
-
-    axios
-      .post(`${process.env.REACT_APP_BACKEND}/product`, formData, {
+  const createData = async (data) => {
+    try {
+      const response = axios.post(`${process.env.REACT_APP_BACKEND}/product`, data, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
-      })
-      .then((res) => {
-        console.log(res);
-        alert('product created');
-        setShow(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-        setShow(false);
       });
+      console.log(response.data);
+      // alert('product created');
+    } catch (error) {
+      console.log(error);
+      alert(error);
+      setShow(false);
+    }
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append('name', data.name);
+  //   formData.append('price', data.price);
+  //   formData.append('size', data.size);
+  //   formData.append('color', data.color);
+  //   formData.append('stock', data.stock);
+  //   formData.append('photo', saveImage);
+  //   formData.append('description', data.description);
+
+  //   axios
+  //     .post(`${process.env.REACT_APP_BACKEND}/product`, formData, {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data',
+  //       },
+  //     })
+  //     .then((res) => {
+  //       console.log(res);
+  //       alert('product created');
+  //       setShow(false);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       alert(err);
+  //       setShow(false);
+  //     });
+  // };
 
   return (
     <>
@@ -77,26 +93,26 @@ const ModalProduct = () => {
               </h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="modal-body">
                 <div className="mb-3 w-100">
-                  <input className="form-control" type="text" placeholder="name" name="name" value={data.name} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="name" name="name" value={formData.name} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="price" name="price" value={data.price} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="price" name="price" value={formData.price} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="size" name="size" value={data.size} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="size" name="size" value={formData.size} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="color" name="color" value={data.color} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="color" name="color" value={formData.color} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="stock" name="stock" value={data.stock} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="stock" name="stock" value={formData.stock} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
@@ -104,7 +120,7 @@ const ModalProduct = () => {
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="description" name="description" value={data.description} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="description" name="description" value={formData.description} onChange={handleChange} />
                 </div>
               </div>
 
@@ -112,7 +128,7 @@ const ModalProduct = () => {
                 <button type="button" className="btn btn-secondary" onClick={handleClose} data-bs-dismiss="modal">
                   Close
                 </button>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" onClick={() => createData(formData)} className="btn btn-primary">
                   Create
                 </button>
               </div>

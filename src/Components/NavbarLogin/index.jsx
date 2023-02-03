@@ -9,7 +9,7 @@ import color6 from '../../Assets/images/colors/Ellipse 6.png';
 import color7 from '../../Assets/images/colors/Ellipse 7.png';
 import color8 from '../../Assets/images/colors/Ellipse 8.png';
 import imgProfile from '../../Assets/images/profile/christian-buehner-DItYlc26zVI-unsplash 1.png';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const NavbarLogin = () => {
   const navigate = useNavigate();
@@ -30,10 +30,10 @@ const NavbarLogin = () => {
       <header id="navbar" className="sticky-top">
         <nav className="navbar navbar-expand-lg bg-light ">
           <div className="container">
-            <a className="navbar-brand d-flex align-items-center">
+            <Link to={`/home`} className="navbar-brand d-flex align-items-center">
               <img src={logo} alt="Logo" className="d-inline-block align-text-top me-3" />
               Blanja
-            </a>
+            </Link>
 
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

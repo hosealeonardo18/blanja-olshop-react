@@ -3,6 +3,7 @@ import '../../Assets/css/style.css';
 import axios from 'axios';
 
 import ModalProduct from '../ModalProduct';
+import { useParams } from 'react-router-dom';
 
 const MainSidebar = () => {
   const [products, setProducts] = useState([]);
@@ -17,10 +18,11 @@ const MainSidebar = () => {
       });
   }, []);
 
-  const handleDelete = () => {
+  const handleDelete = (id) => {
     axios
-      .delete(`${process.env.REACT_APP_BACKEND}/product/:id`)
+      .delete(`${process.env.REACT_APP_BACKEND}/product/${id}`)
       .then((res) => {
+        console.log(res);
         alert('delete success');
       })
       .catch((err) => {
@@ -69,7 +71,7 @@ const MainSidebar = () => {
                               <button type="button" className="btn btn-success me-1">
                                 <i className="bi bi-pencil-square"></i>
                               </button>
-                              <button type="button" className="btn btn-danger" onClick={handleDelete}>
+                              <button type="button" className="btn btn-danger" onClick={() => handleDelete(item.id_product)}>
                                 <i className="bi bi-trash3-fill"></i>
                               </button>
                             </td>

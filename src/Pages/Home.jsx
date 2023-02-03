@@ -16,7 +16,7 @@ const Home = () => {
         <Navbar />
         <Carousell />
         <Category />
-        <Products />
+        <Products titleInformasi="New" subInformasi="You've never seen it before" />
         <Popular />
       </>
     );
@@ -27,7 +27,7 @@ const Home = () => {
           <NavbarLogin />
           <Carousell />
           <Category />
-          <Products />
+          <Products titleInformasi="New" subInformasi="You've never seen it before" />
           <Popular />
         </body>
       </>

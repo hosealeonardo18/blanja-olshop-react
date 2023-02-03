@@ -4,6 +4,7 @@ import Login from '../../Pages/Auth/Login';
 import Register from '../../Pages/Auth/Register';
 import Dashboard from '../../Pages/Dashboard';
 import Detail from '../../Pages/Detail';
+import RequireAuth from '../../Components/RequireAuth';
 
 import Home from '../../Pages/Home';
 import Page404 from '../../Pages/Page404';
@@ -17,9 +18,16 @@ const Router = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/detail" element={<Detail />} />
+          <Route path="/product/:id" element={<Detail />} />
 
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <RequireAuth>
+                <Dashboard />
+              </RequireAuth>
+            }
+          />
 
           <Route path="*" element={<Page404 />} />
         </Routes>
