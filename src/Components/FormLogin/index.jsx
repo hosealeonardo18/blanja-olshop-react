@@ -1,8 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../../Assets/css/style.css';
 import Logo from '../../Assets/images/icon/logo.png';
+import axios from 'axios';
 
 const FormLogin = () => {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const [error, setError] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND}/seller/auth/login`, { email, password });
+
+      localStorage.setItem('token', response.data.data.token);
+      if (localStorage.getItem('token')) {
+        navigate('/home');
+        window.location.reload();
+      }
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
   return (
     <main id="login">
       <div className="container vh-100 d-flex justify-content-center align-items-center">
@@ -41,13 +64,14 @@ const FormLogin = () => {
               {/* Seller */}
               <div className="tab-content" id="pills-tabContent">
                 <div className="tab-pane fade show active" id="pills-Seller" role="tabpanel" aria-labelledby="pills-Seller-tab" tabindex="0">
-                  <form className="pt-4 pt-sm-3" method="POST">
+                  <form className="pt-4 pt-sm-3" onSubmit={handleSubmit}>
+                    {/* {error && <div className="error">{error}</div>} */}
                     <div className="mb-3">
-                      <input type="email" className="form-control" id="exampleInputEmail1" name="email" placeholder="Email" />
+                      <input className="form-control" id="Email" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
 
                     <div className="mb-3">
-                      <input type="password" className="form-control" id="exampleInputPassword1" name="password" placeholder="Password" />
+                      <input className="form-control" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
 
                     <div className="mb-4 d-flex justify-content-end">

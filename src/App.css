@@ -21,9 +21,9 @@
 }
 
 /* ==================== navbar ===================== */
-#navbar {
+/* #navbar {
   margin-bottom: 100px;
-}
+} */
 
 #navbar .navbar {
   background-color: var(--white) !important;
@@ -121,33 +121,33 @@
 }
 
 /* modal filter */
-#navbar #filter .modal-header {
+#filter .modal-header {
   padding: 20px 20px;
   box-shadow: 0px 0px 6px 0px rgba(53, 50, 50, 0.25);
 }
 
-#navbar #filter .modal-body {
+#filter .modal-body {
   background-color: var(--lightGrey);
   padding: 0;
 }
 
-#navbar #filter .text-color {
+#filter .text-color {
   color: var(--black);
   font-weight: 600;
 }
 
-#navbar #filter .container {
+#filter .container {
   background-color: var(--white);
   padding: 20px 20px;
 }
 
-#navbar #filter .color-pallets .btn-color {
+#filter .color-pallets .btn-color {
   padding: 3px;
   margin-right: 12px;
   border-radius: 50%;
 }
 
-#navbar #filter .size-charts .btn-size {
+#filter .size-charts .btn-size {
   width: 40px;
   height: 40px;
 
@@ -155,7 +155,7 @@
   margin-right: 12px;
 }
 
-#navbar #filter .list-categories .btn-category {
+#filter .list-categories .btn-category {
   width: 100%;
   height: 40px;
 
@@ -163,42 +163,42 @@
   margin-right: 12px;
 }
 
-#navbar #filter .list-categories .btn-category:focus,
+#filter .list-categories .btn-category:focus,
 .btn-category:active {
   color: var(--white);
   background-color: var(--primary);
   border: none;
 }
 
-#navbar #filter .size-charts .btn-size:focus,
+#filter .size-charts .btn-size:focus,
 .btn-size:active {
   color: var(--white);
   background-color: var(--primary);
   border: none;
 }
 
-#navbar #filter .color-pallets .btn-color:active {
+#filter .color-pallets .btn-color:active {
   border: 1px solid var(--primary);
 }
 
-#navbar #filter .form-select {
+#filter .form-select {
   width: 100%;
   border: none;
   padding-left: 0;
   padding-top: 10px;
 }
 
-#navbar #filter .modal-footer {
+#filter .modal-footer {
   box-shadow: 0px -8px 10px 0px rgba(217, 217, 217, 0.25);
 }
 
-#navbar #filter .modal-footer .btn-discard {
+#filter .modal-footer .btn-discard {
   width: 100%;
   border: 1px solid var(--black);
   border-radius: 24px;
 }
 
-#navbar #filter .modal-footer .btn-apply {
+#filter .modal-footer .btn-apply {
   width: 100%;
   background-color: var(--primary);
   color: var(--white);
@@ -206,12 +206,12 @@
   border-radius: 24px;
 }
 
-#navbar #filter .modal-footer .btn-apply:hover {
+#filter .modal-footer .btn-apply:hover {
   background-color: var(--hover-red);
   color: var(--white);
 }
 
-#navbar #filter .modal-footer .btn-discard:hover {
+#filter .modal-footer .btn-discard:hover {
   background-color: var(--primary);
   color: var(--white);
   border: none;

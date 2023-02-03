@@ -31,6 +31,10 @@ body {
   background-color: var(--white);
 }
 
+#Dashboard {
+  background-color: var(--lightGrey) !important;
+}
+
 /* category */
 
 #menu-category {
@@ -99,7 +103,7 @@ body {
 
 /* ================ hero section =============== */
 #carousel {
-  margin-top: 140px;
+  margin-top: 50px;
 }
 
 #carousel .swiper-slide {
@@ -717,7 +721,7 @@ a {
 /* ========================== detail product page =======================  */
 
 .breadcrumb {
-  margin-top: 65px;
+  margin-top: 15px;
   margin-bottom: 0;
 }
 
@@ -734,6 +738,7 @@ a {
 }
 
 .card-body {
+  /* height: 160px; */
   padding: 20px;
 }
 
@@ -975,6 +980,7 @@ h5 {
   font-weight: 500;
   line-height: 24px;
   color: var(--black);
+  height: 50px;
 }
 
 .btn-card-product {
@@ -1368,12 +1374,12 @@ h5 {
 }
 
 #sidebar {
-  background-color: var(--background);
+  background-color: var(--background) !important;
 }
 
 .sidebar {
   background-color: var(--white);
-  padding: 150px 30px 30px 30px;
+  padding: 50px 30px 30px 30px;
   box-sizing: border-box;
   flex-direction: column;
 }
@@ -1388,24 +1394,73 @@ h5 {
 .main {
   margin-top: 70px;
 }
+
 .main .list-item {
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 6px;
-  transition: 0.1s ease-in-out;
+  margin-top: 0;
 }
 
-.main .list-item:hover {
+.main .btn-primary {
+  width: 100%;
+  text-align: start;
+
+  color: var(--grey);
+  background-color: transparent;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.main .btn-primary:hover {
+  color: var(--grey);
   background-color: var(--hover-red-item);
-  border-radius: 10px;
+}
+
+.main .card-body {
+  margin-top: -15px;
+  margin-left: 60px;
+  padding: 0;
+  text-align: end;
+  border: none;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+
+.main .card-body .btn {
+  margin: 0;
+  padding: 8px 0;
+  text-align: start;
 }
 
 .icon-profile {
   height: 35px;
   width: 35px;
   border-radius: 50%;
+  background-color: rgb(0, 145, 218);
   padding: 8px;
   transition: 0.1s ease-in-out;
+}
+
+.icon-profile-cart {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: rgb(215, 73, 208);
+  padding: 8px;
+  transition: 0.1s ease-in-out;
+}
+
+.icon-profile-product {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: rgb(244, 127, 44);
+  padding: 8px;
+  transition: 0.1s ease-in-out;
+}
+
+.photo-table {
+  width: 50px;
 }
 
 .main .description {
@@ -1427,13 +1482,13 @@ h5 {
 /* ========================================= main content =================================== */
 .main-content {
   overflow-y: scroll;
-  padding: 150px 30px 30px 45px;
+  padding: 50px 30px 30px 45px;
   flex-grow: 1;
 }
 
 .main-content .wrapper-card {
-  height: 636px;
-  width: 850px;
+  height: 100%;
+  width: 100%;
   border-radius: 4px;
   border: 1px solid rgba(155, 155, 155, 1);
   padding: 30px;
@@ -1713,6 +1768,7 @@ h5 {
   }
   #newProduct .card {
     width: 160px;
+
     border-radius: 8px;
     margin-right: 20px;
     box-shadow: 0px 0px 14px 0px rgba(173, 173, 173, 0.25);
@@ -1733,10 +1789,12 @@ h5 {
   }
 
   #newProduct .card .card-body {
+    height: 100%;
     padding: 8px;
   }
 
   #newProduct .title-product {
+    height: 38px;
     font-size: 14px;
     line-height: 20px;
   }
