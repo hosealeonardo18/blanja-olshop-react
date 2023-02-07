@@ -49,7 +49,7 @@ const ModalUpdate = ({ product }) => {
       })
       .then((res) => {
         console.log(res);
-        alert('product created');
+        alert('Product Updated');
       })
       .catch((err) => {
         console.log(err);
