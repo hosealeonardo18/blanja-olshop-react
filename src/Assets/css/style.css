@@ -366,7 +366,7 @@ body {
 
 .btn-login-form {
   width: 100% !important;
-  height: 48px !important;
+  height: 38px !important;
   border-radius: 25px !important;
   border: none !important;
   background-color: var(--primary) !important;
@@ -427,151 +427,166 @@ a {
 /* card sub select */
 
 #cart .card-checkbox {
-  width: 100%;
-  border-radius: 4px;
-  box-shadow: 0px 0px 8px 0px rgba(115, 115, 115, 0.25);
-  box-sizing: border-box;
+  width: 100% !important;
+  border-radius: 4px !important;
+  box-shadow: 0px 0px 8px 0px rgba(115, 115, 115, 0.25) !important;
+  box-sizing: border-box !important;
 
-  padding: 20px;
+  padding: 20px !important;
 }
 
 #cart .card-checkbox .wrapper-img-checkbox {
-  width: 70px;
-  height: 70px;
-  border-radius: 8px;
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 8px !important;
 }
 
 #cart .card-checkbox .img-cart {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
 }
 
 #cart .checkbox:checked {
-  border: none;
-  background-color: var(--primary);
+  border: none !important;
+  background-color: var(--primary) !important;
 }
 
 #cart .checkbox:active {
-  background-color: var(--primary);
+  background-color: var(--primary) !important;
 }
 
 #cart .select-btn {
-  width: 100%;
-  cursor: pointer;
+  width: 100% !important;
+  cursor: pointer !important;
 }
 
 #cart .btn-delete {
-  color: var(--primary);
-  font-weight: 600;
+  color: var(--primary) !important;
+  font-weight: 600 !important;
 }
 
 #cart .btn-delete:hover {
-  color: var(--hover-red);
+  color: var(--hover-red) !important;
 }
 
 #cart .btn-text {
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--black);
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: var(--black) !important;
 }
 
 #cart .price {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--black);
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  color: var(--black) !important;
 }
 
 #cart .title-categories {
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 34px !important;
+  font-weight: 700 !important;
 }
 
 #cart .card-form-select {
-  width: 100%;
-  height: 64px;
-  border-radius: 4px;
-  box-shadow: 0px 0px 8px 0px rgba(115, 115, 115, 0.25);
-  background-color: var(--white);
-  margin-bottom: 20px;
+  width: 100% !important;
+  height: 64px !important;
+  border-radius: 4px !important;
+  box-shadow: 0px 0px 8px 0px rgba(115, 115, 115, 0.25) !important;
+  background-color: var(--white) !important;
+  margin-bottom: 20px !important;
 }
 
 #cart .card-form-summary {
-  width: 100%;
-  border-radius: 4px;
-  background-color: var(--white);
-  box-shadow: 0px 0px 8px 0px rgba(115, 115, 115, 0.25);
+  width: 100% !important;
+  border-radius: 4px !important;
+  background-color: var(--white) !important;
+  box-shadow: 0px 0px 8px 0px rgba(115, 115, 115, 0.25) !important;
 
-  padding: 30px;
+  padding: 30px !important;
 }
 
 #cart .title-summary {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 16px !important;
+  font-weight: 600 !important;
 }
 
 #cart .text-total {
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--grey);
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: var(--grey) !important;
 }
 
 #cart .btn-mines-cart {
-  width: 30px;
-  height: 30px;
-  border: none;
-  border-radius: 50%;
-  color: var(--white);
-  background-color: var(--grey);
+  width: 30px !important;
+  height: 30px !important;
+  border: none !important;
+  border-radius: 50% !important;
+  color: var(--white) !important;
+  background-color: var(--grey) !important;
 }
 
 #cart .btn-mines-cart:hover {
-  color: var(--white);
-  background-color: var(--black);
+  color: var(--white) !important;
+  background-color: var(--black) !important;
 }
 
 #cart .btn-plus-cart {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--white);
-  color: var(--black);
-  box-shadow: 0px 0px 4px 0px rgba(142, 142, 142, 0.25);
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background-color: var(--white) !important;
+  color: var(--black) !important;
+  box-shadow: 0px 0px 4px 0px rgba(142, 142, 142, 0.25) !important;
 }
 
 #cart .btn-plus-cart:hover {
-  color: var(--white);
-  background-color: var(--lightGrey);
+  color: var(--white) !important;
+  background-color: var(--lightGrey) !important;
 }
 
 .input-group {
-  width: 100%;
-  height: 64px;
+  width: 100% !important;
+  height: 64px !important;
 }
 
 .form-caption {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 16px;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  line-height: 16px !important;
 }
 
 .form-caption span {
-  color: var(--grey);
-  font-weight: 400;
+  color: var(--grey) !important;
+  font-weight: 400 !important;
 }
 
 .form-btn {
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--primary);
-  font-size: 16px;
-  margin-right: 22px;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  color: var(--primary) !important;
+  font-size: 16px !important;
+  margin-right: 22px !important;
 }
 
 .form-btn:hover {
-  color: var(--red);
+  color: var(--red) !important;
+}
+
+#cart .title-product {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: var(--black) !important;
+  line-height: 24px !important;
+  height: 24px !important;
+  margin: 0;
+}
+
+#cart .text-seller {
+  font-size: 12px !important;
+  color: var(--grey) !important;
+  margin: 0 !important;
 }
 
 /* end sub select */
@@ -975,7 +990,6 @@ h5 {
 .title-product {
   font-size: 16px !important;
   font-weight: 500 !important;
-  line-height: 24px !important;
   color: var(--black) !important;
   height: 50px !important;
 }
