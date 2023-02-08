@@ -10,6 +10,7 @@ import color7 from '../../Assets/images/colors/Ellipse 7.png';
 import color8 from '../../Assets/images/colors/Ellipse 8.png';
 import imgProfile from '../../Assets/images/profile/christian-buehner-DItYlc26zVI-unsplash 1.png';
 import { Link, useNavigate } from 'react-router-dom';
+import Button from '../Button';
 
 const NavbarLogin = () => {
   const navigate = useNavigate();
@@ -22,6 +23,11 @@ const NavbarLogin = () => {
 
   const handleProfile = () => {
     navigate('/dashboard');
+    window.location.reload();
+  };
+
+  const handleCart = () => {
+    navigate('/cart');
     window.location.reload();
   };
 
@@ -56,7 +62,7 @@ const NavbarLogin = () => {
 
               <ul className="navbar-nav d-flex align-items-center">
                 <li className="nav-item d-flex">
-                  <a className="nav-link" aria-current="page" href="#">
+                  <a className="nav-link" aria-current="page" onClick={handleCart}>
                     <i className="bi bi-cart2"></i>
                   </a>
 
@@ -70,15 +76,13 @@ const NavbarLogin = () => {
                 </li>
 
                 <li className="nav-item">
-                  <button type="button" class="btn btn-profile " onClick={handleProfile}>
+                  <Button type="button" className="btn btn-profile" target={handleProfile}>
                     <img className="btnProfile" src={imgProfile} alt="" />
-                  </button>
+                  </Button>
                 </li>
 
                 <li className="nav-item">
-                  <button className="btn btn-login" type="button" onClick={handleLogout}>
-                    Logout
-                  </button>
+                  <Button type="button" className="btn btn-login" target={handleLogout} children="Logout" />
                 </li>
               </ul>
             </div>

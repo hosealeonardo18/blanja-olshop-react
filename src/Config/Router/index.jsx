@@ -8,6 +8,7 @@ import RequireAuth from '../../Components/RequireAuth';
 
 import Home from '../../Pages/Home';
 import Page404 from '../../Pages/Page404';
+import Cart from '../../Pages/Cart';
 
 const Router = () => {
   return (
@@ -18,6 +19,14 @@ const Router = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route
+            path="/cart"
+            element={
+              <RequireAuth>
+                <Cart />
+              </RequireAuth>
+            }
+          />
           <Route path="/product/:id" element={<Detail />} />
 
           <Route

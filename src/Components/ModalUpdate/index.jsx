@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const ModalUpdate = ({ product }) => {
   const token = localStorage.getItem('token');
 
   const [dataProduct, setDataProduct] = useState({
-    name: '',
+    name: `${product.name}`,
     price: '',
     size: '',
     color: '',
@@ -13,8 +13,6 @@ const ModalUpdate = ({ product }) => {
     description: '',
     photo: '',
   });
-
-  console.log(dataProduct);
 
   const handleUpload = (e) => {
     setDataProduct((prev) => {

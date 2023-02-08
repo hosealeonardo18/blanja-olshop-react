@@ -10,10 +10,17 @@ import color6 from '../../Assets/images/colors/Ellipse 6.png';
 import color7 from '../../Assets/images/colors/Ellipse 7.png';
 import color8 from '../../Assets/images/colors/Ellipse 8.png';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import Button from '../Button';
 
 const Navbar = () => {
   const navigate = useNavigate();
+
   const handleLogin = () => {
+    navigate('/login');
+    window.location.reload();
+  };
+
+  const handleCart = () => {
     navigate('/login');
     window.location.reload();
   };
@@ -53,22 +60,15 @@ const Navbar = () => {
 
               <ul className="navbar-nav d-flex align-items-center">
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="#">
+                  <a className="nav-link" aria-current="page" onClick={handleCart}>
                     <i className="bi bi-cart2"></i>
                   </a>
                 </li>
 
                 <li className="nav-item d-flex">
-                  <button type="button" className="btn-login w-100" onClick={handleLogin}>
-                    Login
-                  </button>
-
-                  <button type="button" className="btn-signup w-100 " onClick={handleRegister}>
-                    Signup
-                  </button>
+                  <Button type="button" className="btn-login w-100" target={handleLogin} children="Login" />
+                  <Button type="button" className="btn-signup w-100" target={handleRegister} children="Signup" />
                 </li>
-
-                <li className="nav-item"></li>
               </ul>
             </div>
           </div>
