@@ -3,10 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../../Assets/css/style.css';
 import Logo from '../../Assets/images/icon/logo.png';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const Login = () => {
   const navigate = useNavigate();
 
+  // login seller
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,12 +18,58 @@ const Login = () => {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND}/seller/auth/login`, { email, password });
 
       localStorage.setItem('token', response.data.data.token);
+      localStorage.setItem('role', response.data.data.role);
+
       if (localStorage.getItem('token')) {
+        swal({
+          title: `${response.data.message}`,
+          text: 'You clicked the button!',
+          icon: 'success',
+          button: 'OK',
+        });
         navigate('/home');
-        window.location.reload();
+        // window.location.reload();
       }
     } catch (error) {
-      console.log(error.response);
+      swal({
+        title: `${error.response.data.message}`,
+        text: 'You clicked the button!',
+        icon: 'error',
+        button: 'OK',
+      });
+    }
+  };
+
+  // login cust
+  const [emailCust, setEmailCust] = useState('');
+  const [passwordCust, setPasswordCust] = useState('');
+
+  const handleSubmitCust = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND}/customer/auth/login`, { emailCust, passwordCust });
+
+      localStorage.setItem('token', res.data.data.token);
+      localStorage.setItem('role', res.data.data.role);
+
+      if (localStorage.getItem('token')) {
+        swal({
+          title: `${res.data.message}`,
+          text: 'You clicked the button!',
+          icon: 'success',
+          button: 'OK',
+        });
+        navigate('/home');
+      } else {
+        swal({
+          title: `${res.data.message}`,
+          text: 'You clicked the button!',
+          icon: 'error',
+          button: 'OK',
+        });
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -93,13 +141,13 @@ const Login = () => {
 
                 {/*  tab customer  */}
                 <div className="tab-pane fade" id="pills-Customer" role="tabpanel" aria-labelledby="pills-Customer-tab" tabindex="0">
-                  <form className="pt-4" method="POST">
+                  <form className="pt-4" onSubmit={handleSubmitCust}>
                     <div className="mb-3">
-                      <input type="email" className="form-control" id="exampleInputEmail1" name="email" placeholder="Email" />
+                      <input type="email" className="form-control" id="emailCust" name="emailCust" placeholder="Email" value={emailCust} onChange={(e) => setEmailCust(e.target.value)} />
                     </div>
 
                     <div className="mb-3">
-                      <input type="password" className="form-control" id="exampleInputPassword1" name="password" placeholder="Password" />
+                      <input type="password" className="form-control" id="passwordCust" name="passwordCust" placeholder="Password" value={passwordCust} onChange={(e) => setPasswordCust(e.target.value)} />
                     </div>
 
                     <div className="mb-4 d-flex justify-content-end">

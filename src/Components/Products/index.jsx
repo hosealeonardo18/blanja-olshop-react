@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { getProduct } from '../../redux/action/productAction';
 
 const Products = (props) => {
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND}/product`)
-      .then(function (response) {
-        setProducts(response.data.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    dispatch(getProduct(setProducts));
   }, []);
 
   return (

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { createProduct } from '../../redux/action/productAction';
 
 const ModalProduct = () => {
-  const token = localStorage.getItem('token');
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
+  const dispatch = useDispatch();
 
   const [dataProduct, setDataProduct] = useState({
     name: '',
@@ -32,31 +33,7 @@ const ModalProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData();
-
-    for (let attr in dataProduct) {
-      formData.append(attr, dataProduct[attr]);
-    }
-
-    formData.append('id_categories', 'c123b284-4429-4d3c-895e-8829f26804d8');
-
-    axios
-      .post(`${process.env.REACT_APP_BACKEND}/product`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        alert('product created');
-        setShow(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err);
-        setShow(false);
-      });
+    dispatch(createProduct(dataProduct));
   };
 
   return (

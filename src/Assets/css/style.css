@@ -307,6 +307,7 @@ body {
   background-color: var(--primary) !important;
   border-radius: 4px 0 0 4px !important;
   border: none !important;
+  color: var(--white) !important;
 }
 
 .nav-item .nav-seller {
@@ -1640,10 +1641,6 @@ h5 {
 
 @media only screen and (max-width: 391px) {
   /* ===== login ===== */
-  .nav-pills .nav-link {
-    height: 48px;
-    width: 150px !important;
-  }
 
   form {
     padding: 0 !important;
@@ -1656,7 +1653,6 @@ h5 {
 
 @media only screen and (max-width: 576px) {
   /* ======== navbar ========= */
-
   #navbar .navbar-collapse {
     width: 100%;
     background-color: var(--white);
@@ -1693,7 +1689,7 @@ h5 {
     border: 1px solid var(--grey);
   }
 
-  /* ======== end navbar ========= */ /* navbar */
+  /* ======== end navbar ========= */
   .nav-link {
     height: 48px;
     width: 205px;
@@ -1943,7 +1939,7 @@ h5 {
   /* ===== login ===== */
   .nav-pills .nav-link {
     height: 48px !important;
-    width: 140px !important;
+    width: 100px !important;
   }
 
   .nav-pills {
@@ -2565,11 +2561,6 @@ h5 {
 
   /* end detail product */
 
-  /* .preferensi,
-  .description {
-    display: none;
-  } */
-
   .card {
     width: 300px;
     border-radius: 8px;
@@ -2687,7 +2678,7 @@ h5 {
   /* ===== login & register ====== */
   .nav-pills .nav-link {
     height: 48px;
-    width: 152px;
+    width: 130px;
   }
   /* ============ carousel ==================== */
   #carousel .card-image {

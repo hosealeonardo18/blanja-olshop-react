@@ -1,33 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import '../../Assets/css/style.css';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 import ModalProduct from '../ModalProduct';
 import ModalUpdate from '../ModalUpdate';
+import { useDispatch } from 'react-redux';
+import { deleteProducts, getProduct } from '../../redux/action/productAction';
 
 const MainSidebar = () => {
   const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_BACKEND}/product`)
-      .then(function (response) {
-        setProducts(response.data.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    dispatch(getProduct(setProducts)).catch(function (error) {
+      console.log(error);
+    });
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete(`${process.env.REACT_APP_BACKEND}/product/${id}`)
-      .then((res) => {
-        console.log(res);
-        alert('delete success');
-      })
-      .catch((err) => {
-        alert('delete failed');
-      });
+    dispatch(deleteProducts(id)).catch((err) => {
+      alert('delete failed');
+    });
   };
 
   return (
@@ -45,12 +39,11 @@ const MainSidebar = () => {
                 <table class="table ">
                   <thead className="table-dark text-center ">
                     <tr>
-                      <th scope="col">Id Product</th>
+                      <th scope="col">Images</th>
                       <th scope="col">Name</th>
                       <th scope="col">Size</th>
                       <th scope="col">Price</th>
                       <th scope="col">Qty</th>
-                      <th scope="col">Images</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -60,16 +53,15 @@ const MainSidebar = () => {
                         <>
                           <ModalUpdate product={item} />
                           <tr>
-                            <td>{item.id_product}</td>
-                            <td>{item.name}</td>
-                            <td>{item.size}</td>
-                            <td>{item.price}</td>
-                            <td>{item.stock}</td>
-                            <td>
+                            <td className="text-center">
                               <img crossOrigin="anonymous" src={item.photo} className="photo-table" alt="" />
                             </td>
+                            <td>{item.name}</td>
+                            <td className="text-center">{item.size}</td>
+                            <td className="text-center">{item.price}</td>
+                            <td className="text-center">{item.stock}</td>
 
-                            <td>
+                            <td className="text-center">
                               <button type="button" className="btn btn-success me-1" data-bs-toggle="modal" data-bs-target={`#update${item.id_product}`}>
                                 <i className="bi bi-pencil-square"></i>
                               </button>

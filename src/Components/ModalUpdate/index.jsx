@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import swal from 'sweetalert';
+import { useDispatch } from 'react-redux';
+import { updateProduct } from '../../redux/action/productAction';
 
 const ModalUpdate = ({ product }) => {
-  const token = localStorage.getItem('token');
+  const dispatch = useDispatch();
 
   const [dataProduct, setDataProduct] = useState({
     name: `${product.name}`,
-    price: '',
-    size: '',
-    color: '',
-    stock: '',
-    description: '',
-    photo: '',
+    price: `${product.price}`,
+    size: `${product.size}`,
+    color: `${product.color}`,
+    stock: `${product.stock}`,
+    description: `${product.description}`,
+    photo: `${product.photo}`,
   });
 
   const handleUpload = (e) => {
@@ -25,33 +28,22 @@ const ModalUpdate = ({ product }) => {
       ...dataProduct,
       [e.target.name]: e.target.value,
     });
-    console.log(dataProduct);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = new FormData();
-
-    for (let attr in dataProduct) {
-      formData.append(attr, dataProduct[attr]);
-    }
-
-    formData.append('id_categories', 'c123b284-4429-4d3c-895e-8829f26804d8');
-
-    axios
-      .put(`${process.env.REACT_APP_BACKEND}/product/${product.id_product}`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    dispatch(updateProduct(dataProduct, product))
       .then((res) => {
         console.log(res);
-        alert('Product Updated');
+        swal({
+          title: `${res.data.message}`,
+          text: 'You clicked the button!',
+          icon: 'success',
+          button: 'OK',
+        });
       })
       .catch((err) => {
         console.log(err);
-        alert(err);
       });
   };
 
@@ -70,23 +62,23 @@ const ModalUpdate = ({ product }) => {
             <form onSubmit={handleSubmit}>
               <div className="modal-body">
                 <div className="mb-3 w-100">
-                  <input className="form-control" type="text" placeholder="name" name="name" value={product.name} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="name" name="name" value={dataProduct.name} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="price" name="price" value={product.price} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="price" name="price" value={dataProduct.price} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="size" name="size" value={product.size} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="size" name="size" value={dataProduct.size} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="color" name="color" value={product.color} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="color" name="color" value={dataProduct.color} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="stock" name="stock" value={product.stock} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="stock" name="stock" value={dataProduct.stock} onChange={handleChange} />
                 </div>
 
                 <div className="mb-3">
@@ -94,7 +86,7 @@ const ModalUpdate = ({ product }) => {
                 </div>
 
                 <div className="mb-3">
-                  <input className="form-control" type="text" placeholder="description" name="description" value={product.description} onChange={handleChange} />
+                  <input className="form-control" type="text" placeholder="description" name="description" value={dataProduct.description} onChange={handleChange} />
                 </div>
               </div>
 
