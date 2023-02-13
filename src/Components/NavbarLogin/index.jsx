@@ -47,16 +47,16 @@ const NavbarLogin = () => {
             </button>
 
             <div className="collapse navbar-collapse" id="navbarNav">
-              <form class="d-flex position-relative search" role="search">
-                <input class="form-control form-search me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button class="btn btn-search position-absolute " type="submit">
-                  <i class="bi bi-search"></i>
+              <form className="d-flex position-relative search" role="search">
+                <input className="form-control form-search me-2" type="search" placeholder="Search" aria-label="Search" />
+                <button className="btn btn-search position-absolute " type="submit">
+                  <i className="bi bi-search"></i>
                 </button>
               </form>
 
               {/* button fiter */}
-              <button class="btn btn-outline-success me-auto" type="button" data-bs-toggle="modal" data-bs-target="#filter">
-                <i class="bi bi-funnel"></i>
+              <button className="btn btn-outline-success me-auto" type="button" data-bs-toggle="modal" data-bs-target="#filter">
+                <i className="bi bi-funnel"></i>
               </button>
 
               {/* end filter */}
@@ -68,11 +68,11 @@ const NavbarLogin = () => {
                   </a>
 
                   <a className="nav-link" aria-current="page" href="#">
-                    <i class="bi bi-bell"></i>
+                    <i className="bi bi-bell"></i>
                   </a>
 
                   <a className="nav-link" aria-current="page" href="#">
-                    <i class="bi bi-envelope"></i>
+                    <i className="bi bi-envelope"></i>
                   </a>
                 </li>
 

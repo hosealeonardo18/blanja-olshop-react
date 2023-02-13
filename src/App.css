@@ -21,9 +21,6 @@
 }
 
 /* ==================== navbar ===================== */
-/* #navbar {
-  margin-bottom: 100px;
-} */
 
 #navbar .navbar {
   background-color: var(--white) !important;
@@ -232,6 +229,42 @@
 
 /* =========== end Navbar isLogin ================== */
 /* ==================== end Navbar ======================= */
+
+/* ============== dashboard seller ==================== */
+#pills-tab-product {
+  border-bottom: 1px solid var(--grey);
+}
+
+#pills-tab-product .nav-item {
+  margin-right: 30px;
+}
+
+#pills-tab-product .nav-item .nav-link {
+  border: none;
+  background-color: var(--white);
+
+  padding: 10px 0;
+
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+}
+
+#pills-tab-product .nav-item .nav-link.active {
+  background-color: var(--white) !important;
+  color: var(--primary) !important;
+  border-bottom: 3px solid var(--primary) !important;
+  border-radius: 0 !important;
+}
+.table {
+  border-radius: 20px;
+  border: 1px solid var(--grey);
+}
+
+.table tr th {
+  color: var(--white);
+}
+/* ============== End dashboard seller ==================== */
 @media screen and (max-width: 991px) {
   #navbar .form-search {
     width: 100%;

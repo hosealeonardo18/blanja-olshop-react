@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createProduct } from '../../redux/action/productAction';
 
@@ -36,6 +37,22 @@ const ModalProduct = () => {
     dispatch(createProduct(dataProduct));
   };
 
+  const [categories, setCategories] = useState({
+    id_categories: '',
+    name: '',
+  });
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_BACKEND}/categories`)
+      .then((response) => {
+        setCategories(response.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
       <button type="button" className="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#Create">
@@ -53,6 +70,15 @@ const ModalProduct = () => {
             </div>
             <form onSubmit={handleSubmit}>
               <div className="modal-body">
+                {/* <select className="form-select mb-3" aria-label="Default select example">
+                  <option selected>Category</option>
+                  {categories.map((item) => (
+                    <option value={item.id_categories} onChange={handleChange}>
+                      {item.name}
+                    </option>
+                  ))}
+                </select> */}
+
                 <div className="mb-3 w-100">
                   <input className="form-control" type="text" placeholder="name" name="name" value={dataProduct.name} onChange={handleChange} />
                 </div>

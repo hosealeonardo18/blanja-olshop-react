@@ -46,8 +46,6 @@ export const createProduct = (dataProduct) => async (dispatch) => {
       });
 
     dispatch({ type: 'CREATE_PRODUCT', payload: 'success' });
-
-    window.location.reload();
   } catch (err) {
     swal.fire({
       text: err.response.data.message,
@@ -88,8 +86,6 @@ export const updateProduct = (dataProduct, product) => async (dispatch) => {
       type: 'UPDATE_PRODUCT',
       payload: 'Update Success',
     });
-
-    window.location.reload();
   } catch (error) {
     swal.fire({
       text: 'error',
@@ -119,7 +115,7 @@ export const deleteProducts = (id) => async (dispatch) => {
         }
       });
     });
-    window.location.reload();
+
     dispatch({ type: 'DELETE_PRODUCT', payload: 'success' });
   } catch (error) {
     swal.fire({
