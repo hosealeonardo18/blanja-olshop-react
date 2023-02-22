@@ -1,11 +1,11 @@
 import React from 'react';
-import Profile from '../../Assets/images/profile/christian-buehner-DItYlc26zVI-unsplash 1.png';
+import Profile from '../../Assets/images/profile/formal.png';
 
 const HeaderProfile = () => {
   return (
     <div className="header">
       <div className="wrapper-img d-flex">
-        <img className="profile-images" src={Profile} alt="" />
+        <img className="profile-images" src={Profile} style={{ objectFit: 'cover', width: '60px', height: '60px' }} alt="" />
         <div className="preferensi ms-3">
           <p className="mb-2 fw-bold">Johanes Mikael</p>
           <a href="">

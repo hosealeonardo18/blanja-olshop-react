@@ -8,7 +8,7 @@ import color5 from '../../Assets/images/colors/Ellipse 5.png';
 import color6 from '../../Assets/images/colors/Ellipse 6.png';
 import color7 from '../../Assets/images/colors/Ellipse 7.png';
 import color8 from '../../Assets/images/colors/Ellipse 8.png';
-import imgProfile from '../../Assets/images/profile/christian-buehner-DItYlc26zVI-unsplash 1.png';
+import imgProfile from '../../Assets/images/profile/formal.png';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../Button';
 
@@ -78,7 +78,7 @@ const NavbarLogin = () => {
 
                 <li className="nav-item">
                   <Button type="button" className="btn btn-profile" target={handleProfile}>
-                    <img className="btnProfile" src={imgProfile} alt="" />
+                    <img className="btnProfile" src={imgProfile} style={{ objectFit: 'cover', width: '40px', height: '40px' }} alt="" />
                   </Button>
                 </li>
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarLogin from '../../Components/NavbarLogin';
 import SidebarProfile from '../../Components/SidebarProfile';
-import img from '../../Assets/images/profile/christian-buehner-DItYlc26zVI-unsplash 1.png';
+import img from '../../Assets/images/profile/formal.png';
 
 const Dashboard = () => {
   const isSeller = localStorage.getItem('role');

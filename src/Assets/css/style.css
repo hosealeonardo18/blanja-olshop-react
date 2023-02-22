@@ -1383,6 +1383,7 @@ h5 {
 .profile-img {
   width: 100%;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 #sidebar {
@@ -1398,8 +1399,7 @@ h5 {
 
 .profile-images {
   height: 60px;
-  background-position: center;
-  background-size: cover;
+  object-fit: cover !important;
   border-radius: 50%;
 }
 
@@ -1565,6 +1565,7 @@ h5 {
   height: 110px;
   width: 110px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .main-content .btn-upload:hover {

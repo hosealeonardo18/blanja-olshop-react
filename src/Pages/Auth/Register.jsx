@@ -22,15 +22,12 @@ const Register = () => {
 
   const handleSubmitSeller = (e) => {
     e.preventDefault();
-    const formDataSeller = new FormData();
 
-    for (let temp in dataSeller) {
-      formDataSeller.append(temp, dataSeller[temp]);
-    }
     axios
       .post(`${process.env.REACT_APP_BACKEND}/seller/auth/register`, dataSeller)
       .then((response) => {
         console.log(response);
+        alert(response.data.message);
       })
       .catch((error) => {
         console.log(error);
