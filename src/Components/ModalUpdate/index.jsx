@@ -32,19 +32,7 @@ const ModalUpdate = ({ product }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(updateProduct(dataProduct, product))
-      .then((res) => {
-        console.log(res);
-        swal({
-          title: `${res.data.message}`,
-          text: 'You clicked the button!',
-          icon: 'success',
-          button: 'OK',
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(updateProduct(dataProduct, product));
   };
 
   return (
