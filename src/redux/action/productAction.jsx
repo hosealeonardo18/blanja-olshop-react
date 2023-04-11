@@ -80,7 +80,8 @@ export const updateProduct = (dataProduct, product) => async (dispatch) => {
           text: `Update Product Success`,
           icon: 'success',
         });
-      });
+      })
+      .catch((err) => console.log(err));
 
     dispatch({
       type: 'UPDATE_PRODUCT',
