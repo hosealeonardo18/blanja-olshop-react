@@ -1,70 +1,131 @@
-# Getting Started with Create React App
+<br />
+<p align="center">
+<div align="center">
+  <img height="150" <img src="https://res.cloudinary.com/dklpoff31/image/upload/v1681702726/Group_1158_peagwb.png" alt="logo" border="0"/>
+</div>
+  <h3 align="center">Blanja Olshop</h3>
+  <p align="center">
+    <a href="https://github.com/hosealeonardo18/blanja-olshop-react"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://blanja-olshop.vercel.app/home">View Demo</a>
+  </p>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- ABOUT THE PROJECT -->
 
-## Available Scripts
+## About The Project
 
-In the project directory, you can run:
+Project website e-commerce Blanja ini adalah sebuah platform online yang dirancang untuk memudahkan pengguna dalam melakukan transaksi jual beli secara online. Website ini dikembangkan dengan menggunakan teknologi frontend React.js dan Redux untuk mengoptimalkan performa dan efisiensi tampilan serta pengelolaan state. Pada bagian backend, website ini menggunakan teknologi Express.js yang berfungsi sebagai server untuk mengelola data yang diambil dari Cloudinary. Cloudinary berfungsi sebagai penyimpan data gambar sehingga memungkinkan pengguna untuk dengan mudah melihat gambar dari setiap produk yang dijual.
 
-### `npm start`
+### Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Redux](https://redux.js.org/)
+- [Bootstrap Css](https://getbootstrap.com/)
+- [React js](https://reactjs.org/)
+- [Cloudinary](https://cloudinary.com/)
+- and other
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- GETTING STARTED -->
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+This is an example of how to list things you need to use the software and how to install them.
+- [VS Code]https://code.visualstudio.com/)
+- [nodejs](https://nodejs.org/en/download/)
+- [React js](https://reactjs.org/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Clone This Front End Repo
 
-### `npm run eject`
+```
+git clone https://github.com/hosealeonardo18/blanja-olshop-react
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Go To Folder Repo
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+cd blanja-olshop-react
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Install Module
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm install
+```
 
-## Learn More
+- <a href="#setup-env">Setup .env</a>
+- Type ` npm run dev` To Start Website
+- Type ` npm run production` To Start Production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Setup .env
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create .env file in your root project folder.
 
-### Code Splitting
+```
+REACT_APP_BACKEND = [BACKEND_URL]
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- ROADMAP -->
 
-### Analyzing the Bundle Size
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<table>
+ <tr>
+    <td><img width="350px" src="https://res.cloudinary.com/dklpoff31/image/upload/v1681703060/Screenshot_2023-04-17_104302_yjele2.png" border="0" alt="1" /></td>
+    <td> <img width="350px" src="https://res.cloudinary.com/dklpoff31/image/upload/v1681703060/Screenshot_2023-04-17_104327_hkcvtj.png"  border="0"  alt="2" /></td>
+  </tr>
+   <tr>
+    <td>Login Seller</td>
+    <td>Login Customer</td>
+  </tr>
 
-### Making a Progressive Web App
+  <tr>
+    <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1681703061/Screenshot_2023-04-17_104319_dpeoxz.png" border="0" alt="3" /> </td>
+     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1681703061/Screenshot_2023-04-17_104312_rt90eu.png"  border="0" alt="4" /></td>
+  </tr>
+   <tr>
+    <td>Register Seller</td>
+     <td>Register Customer</td>
+  </tr>
+  <tr>
+    <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1681702918/Screenshot_20230222_201359_eokc7a.png" border="0" alt="3" /> </td>
+     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1681702864/Screenshot_20230222_201430_wrgwzp.png"  border="0" alt="4" /></td>
+  </tr>
+   <tr>
+    <td>Landing Page</td>
+     <td>Detail Productt</td>
+  </tr>
+  
+  <tr>
+    <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1681703236/Screenshot_20230222_201503_szwogq.png" border="0" alt="3" /> </td>
+     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1681703299/Screenshot_2023-04-17_104809_ffynwb.png"  border="0" alt="4" /></td>
+  </tr>
+   <tr>
+    <td>Admin Page | My Profile</td>
+     <td>List My Product</td>
+  </tr>
+</table>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<!-- CONTRIBUTING -->
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### Deployment
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Related Project
 
-### `npm run build` fails to minify
+:rocket: [`Backend E-Commerce Blanja Online Shop`](https://github.com/hosealeonardo18/blanja_olshop_backend)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+:rocket: [`Frontend E-Commerce Blanja Online Shop`](https://github.com/hosealeonardo18/blanja-olshop-react)
+
+:rocket: [`Demo E-Commerce Blanja Online Shop`](https://blanja-olshop.vercel.app/home)
