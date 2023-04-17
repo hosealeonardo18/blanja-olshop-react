@@ -15,7 +15,7 @@
 
 ## About The Project
 
-Project website e-commerce Blanja ini adalah sebuah platform online yang dirancang untuk memudahkan pengguna dalam melakukan transaksi jual beli secara online. Website ini dikembangkan dengan menggunakan teknologi frontend React.js dan Redux untuk mengoptimalkan performa dan efisiensi tampilan serta pengelolaan state. Pada bagian backend, website ini menggunakan teknologi Express.js yang berfungsi sebagai server untuk mengelola data yang diambil dari Cloudinary. Cloudinary berfungsi sebagai penyimpan data gambar sehingga memungkinkan pengguna untuk dengan mudah melihat gambar dari setiap produk yang dijual.
+Project website e-commerce Blanja ini adalah sebuah platform online yang dirancang untuk memudahkan pengguna dalam melakukan transaksi jual beli secara online. Website ini dikembangkan dengan menggunakan teknologi frontend React.js maupun Redux untuk mengoptimalkan performa dan efisiensi tampilan serta pengelolaan state. Pada bagian backend, website ini menggunakan teknologi Express.js yang berfungsi sebagai server untuk mengelola data yang diambil dari Cloudinary. Cloudinary berfungsi sebagai penyimpan data gambar sehingga memungkinkan pengguna untuk dengan mudah melihat gambar dari setiap produk yang dijual.
 
 ### Built With
 
