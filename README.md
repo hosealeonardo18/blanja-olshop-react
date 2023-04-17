@@ -32,7 +32,7 @@ Project website e-commerce Blanja ini adalah sebuah platform online yang diranca
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-- [VS Code]https://code.visualstudio.com/)
+- [VS Code](https://code.visualstudio.com/)
 - [nodejs](https://nodejs.org/en/download/)
 - [React js](https://reactjs.org/)
 
