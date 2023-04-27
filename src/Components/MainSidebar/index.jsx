@@ -23,6 +23,15 @@ const MainSidebar = () => {
     });
   };
 
+  const currencyFormat = (num) => {
+    return (
+      'Rp. ' +
+      Number(num)
+        .toFixed(0)
+        .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+    );
+  };
+
   return (
     <>
       <h3 className="title mb-0">My Product</h3>
@@ -72,7 +81,7 @@ const MainSidebar = () => {
                             </td>
                             <td>{item.name}</td>
                             <td className="text-center">{item.size}</td>
-                            <td className="text-center">{item.price}</td>
+                            <td className="text-center">{currencyFormat(item.price)}</td>
                             <td className="text-center">{item.stock}</td>
 
                             <td className="text-center">

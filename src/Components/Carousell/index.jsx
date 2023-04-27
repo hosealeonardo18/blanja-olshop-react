@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../Assets/css/style.css';
 import imgCarousel from '../../Assets/images/carousell/carousell 1.png';
+import imgCarousel2 from '../../Assets/images/carousell/carousell 2.png';
+import imgCarousel3 from '../../Assets/images/carousell/carousell 5.jpg';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -74,35 +76,35 @@ const Carousell = () => {
                   <SwiperSlide>
                     <a href="" class="card-carousel">
                       <div class="card-image">
-                        <img src={imgCarousel} />
+                        <img src={imgCarousel} style={{ objectFit: 'cover', width: '100%', borderRadius: '10px' }} alt="carousel1" />
                       </div>
                     </a>
                   </SwiperSlide>
                   <SwiperSlide>
                     <a href="" class="card-carousel">
                       <div class="card-image">
-                        <img src={imgCarousel} />
+                        <img src={imgCarousel2} style={{ objectFit: 'cover', width: '100%', borderRadius: '10px' }} alt="carousel2" />
                       </div>
                     </a>
                   </SwiperSlide>
                   <SwiperSlide>
                     <a href="" class="card-carousel">
                       <div class="card-image">
-                        <img src={imgCarousel} />
+                        <img src={imgCarousel3} style={{ objectFit: 'fill', width: '100%', borderRadius: '10px' }} alt="carousel3" />
                       </div>
                     </a>
                   </SwiperSlide>
                   <SwiperSlide>
                     <a href="" class="card-carousel">
                       <div class="card-image">
-                        <img src={imgCarousel} />
+                        <img src={imgCarousel} style={{ objectFit: 'cover', width: '100%', borderRadius: '10px' }} alt="carousel1" />
                       </div>
                     </a>
                   </SwiperSlide>
                   <SwiperSlide>
                     <a href="" class="card-carousel">
                       <div class="card-image">
-                        <img src={imgCarousel} />
+                        <img src={imgCarousel2} style={{ objectFit: 'cover', width: '100%', borderRadius: '10px' }} alt="carousel2" />
                       </div>
                     </a>
                   </SwiperSlide>

@@ -26,6 +26,15 @@ const Detail = () => {
       });
   }, []);
 
+  const currencyFormat = (num) => {
+    return (
+      'Rp. ' +
+      Number(num)
+        .toFixed(0)
+        .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+    );
+  };
+
   const isLogin = localStorage.getItem('token');
   if (!isLogin) {
     return (
@@ -138,7 +147,7 @@ const Detail = () => {
 
                     <div className="price mt-lg-2">
                       <span className="title-color">Price</span>
-                      <p className="price-detail">Rp. {products[0].price}</p>
+                      <p className="price-detail">{currencyFormat(products[0].price)}</p>
                     </div>
 
                     <div className="color">
@@ -481,7 +490,7 @@ const Detail = () => {
 
                   <div className="price mt-lg-2">
                     <span className="title-color">Price</span>
-                    <p className="price-detail">Rp. {products[0].price}</p>
+                    <p className="price-detail">{currencyFormat(products[0].price)}</p>
                   </div>
 
                   <div className="color">

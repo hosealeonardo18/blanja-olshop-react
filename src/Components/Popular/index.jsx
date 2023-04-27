@@ -16,6 +16,15 @@ const Popular = () => {
       });
   }, []);
 
+  const currencyFormat = (num) => {
+    return (
+      'Rp. ' +
+      Number(num)
+        .toFixed(0)
+        .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+    );
+  };
+
   return (
     <section id="popular">
       <div class="container">
@@ -38,7 +47,7 @@ const Popular = () => {
                       <img class="card-image" crossOrigin="anonymous" src={item.photo} alt="..." />
                       <div class="card-body">
                         <h5 class="title-product mb-1">{item.name}</h5>
-                        <p class="card-text">Rp. {item.price}</p>
+                        <p class="card-text">{currencyFormat(item.price)}</p>
                         <p class="text-seller">{item.seller_name}</p>
 
                         <div class="rating">

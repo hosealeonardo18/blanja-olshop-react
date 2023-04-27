@@ -11,6 +11,15 @@ const Products = (props) => {
     dispatch(getProduct(setProducts));
   }, []);
 
+  const currencyFormat = (num) => {
+    return (
+      'Rp. ' +
+      Number(num)
+        .toFixed(0)
+        .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+    );
+  };
+
   return (
     <section id="newProduct">
       <div className="container">
@@ -32,7 +41,7 @@ const Products = (props) => {
                     <img className="card-image" crossOrigin="anonymous" src={item.photo} alt="..." />
                     <div className="card-body">
                       <h5 className="title-product mb-1">{item.name}</h5>
-                      <p className="card-text">Rp. {item.price}</p>
+                      <p className="card-text">{currencyFormat(item.price)}</p>
                       <p className="text-seller">{item.seller_name}</p>
 
                       <div className="rating">
