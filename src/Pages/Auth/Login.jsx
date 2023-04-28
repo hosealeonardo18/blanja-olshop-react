@@ -14,30 +14,31 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND}/seller/auth/login`, { email, password });
 
-      localStorage.setItem('token', response.data.data.token);
-      localStorage.setItem('role', response.data.data.role);
-
-      if (localStorage.getItem('token')) {
-        swal({
-          title: `${response.data.message}`,
-          text: 'You clicked the button!',
-          icon: 'success',
-          button: 'OK',
-        });
-        navigate('/home');
-        // window.location.reload();
-      }
-    } catch (error) {
-      swal({
-        title: `${error.response.data.message}`,
-        text: 'You clicked the button!',
-        icon: 'error',
-        button: 'OK',
-      });
-    }
+    axios
+      .post(`${process.env.REACT_APP_BACKEND}/seller/auth/login`, { email, password })
+      .then((res) => {
+        console.log(res.data.message);
+        if (res.data.message !== 'Login Successfull!') {
+          swal({
+            title: `${res.data.message}`,
+            text: 'You clicked the button!',
+            icon: 'error',
+            button: 'OK',
+          });
+        } else {
+          swal({
+            title: `${res.data.message}`,
+            text: 'You clicked the button!',
+            icon: 'success',
+            button: 'OK',
+          });
+          localStorage.setItem('token', res.data.data.token);
+          localStorage.setItem('role', res.data.data.role);
+          navigate('/home');
+        }
+      })
+      .catch((err) => console.log(err));
   };
 
   // login cust
@@ -46,31 +47,33 @@ const Login = () => {
 
   const handleSubmitCust = async (e) => {
     e.preventDefault();
-    try {
-      const res = await axios.post(`${process.env.REACT_APP_BACKEND}/customer/auth/login`, { emailCust, passwordCust });
 
-      localStorage.setItem('token', res.data.data.token);
-      localStorage.setItem('role', res.data.data.role);
-
-      if (localStorage.getItem('token')) {
-        swal({
-          title: `${res.data.message}`,
-          text: 'You clicked the button!',
-          icon: 'success',
-          button: 'OK',
-        });
-        navigate('/home');
-      } else {
-        swal({
-          title: `${res.data.message}`,
-          text: 'You clicked the button!',
-          icon: 'error',
-          button: 'OK',
-        });
-      }
-    } catch (err) {
-      console.log(err);
-    }
+    axios
+      .post(`${process.env.REACT_APP_BACKEND}/customer/auth/login`, { emailCust, passwordCust })
+      .then((res) => {
+        console.log(res.data.data);
+        if (res.data.message !== 'Login Successfull') {
+          swal({
+            title: `${res.data.message}`,
+            text: 'You clicked the button!',
+            icon: 'error',
+            button: 'OK',
+          });
+        } else {
+          swal({
+            title: `${res.data.message}`,
+            text: 'You clicked the button!',
+            icon: 'success',
+            button: 'OK',
+          });
+          localStorage.setItem('token', res.data.data.token);
+          localStorage.setItem('role', res.data.data.role);
+          navigate('/home');
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
