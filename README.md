@@ -93,7 +93,7 @@ REACT_APP_BACKEND = [BACKEND_URL]
   </tr>
   <tr>
     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1682611939/Screenshot_2023-04-27_230819_a1ogbh.png" border="0" alt="3" /> </td>
-     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1682611939/Screenshot_2023-04-27_230939_ze3eal.png"  border="0" alt="4" /></td>
+     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1682788619/Screenshot_2023-04-30_001612_ouzg3m.png"  border="0" alt="4" /></td>
   </tr>
    <tr>
     <td>Landing Page</td>
@@ -101,8 +101,8 @@ REACT_APP_BACKEND = [BACKEND_URL]
   </tr>
   
   <tr>
-    <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1681703236/Screenshot_20230222_201503_szwogq.png" border="0" alt="3" /> </td>
-     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1682611937/Screenshot_2023-04-27_230849_zcfzkc.png"  border="0" alt="4" /></td>
+    <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1682788618/Screenshot_2023-04-30_001123_skjnt6.png" border="0" alt="3" /> </td>
+     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1682788619/Screenshot_2023-04-30_001143_ezf8kb.png"  border="0" alt="4" /></td>
   </tr>
    <tr>
     <td>Admin Page | My Profile</td>
