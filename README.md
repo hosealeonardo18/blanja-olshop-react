@@ -11,6 +11,21 @@
   </p>
 </p>
 
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Setup .env](#setup-env)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [Related Project](#related-project)
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
@@ -107,6 +122,15 @@ REACT_APP_BACKEND = [BACKEND_URL]
    <tr>
     <td>Admin Page | My Profile</td>
      <td>List My Product</td>
+  </tr>
+  
+  <tr>
+    <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1683640846/Screenshot_2023-05-09_205934_apbxl9.png" border="0" alt="3" /> </td>
+     <td><img width="350px"  src="https://res.cloudinary.com/dklpoff31/image/upload/v1683640845/Screenshot_2023-05-09_205817_f5wtyh.png"  border="0" alt="4" /></td>
+  </tr>
+   <tr>
+    <td>My Cart</td>
+     <td>Checkout</td>
   </tr>
 </table>
 
