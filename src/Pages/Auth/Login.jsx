@@ -18,7 +18,6 @@ const Login = () => {
     axios
       .post(`${process.env.REACT_APP_BACKEND}/seller/auth/login`, { email, password })
       .then((res) => {
-        console.log(res.data.message);
         if (res.data.message !== 'Login Successfull!') {
           swal({
             title: `${res.data.message}`,

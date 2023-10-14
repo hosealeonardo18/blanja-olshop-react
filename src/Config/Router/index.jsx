@@ -12,6 +12,7 @@ import Cart from '../../Pages/Cart';
 import MyProduct from '../../Pages/Dashboard/MyProduct';
 import SellingProduct from '../../Pages/Dashboard/SellingProduct';
 import Dashboard from '../../Pages/Dashboard/Dashboard';
+import Checkout from '../../Pages/Checkout';
 
 const Router = () => {
   return (
@@ -54,6 +55,14 @@ const Router = () => {
             element={
               <RequireAuth>
                 <SellingProduct />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <RequireAuth>
+                <Checkout />
               </RequireAuth>
             }
           />

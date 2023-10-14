@@ -1,0 +1,284 @@
+/* fonts */
+@import url('https://cdn.jsdelivr.net/npm/@typehaus/metropolis@12.0.0-next.7/100,400,500,600,700.css');
+
+/* icon */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
+
+:root {
+  --black: #222222;
+  --grey: #9b9b9b;
+  --lightGrey: #f4f4f4;
+  --white: #fff;
+  --background: #e5e5e5;
+  --red: #f01f0e;
+  --primary: #f01f0e;
+  --hover-red: #bd1a0c;
+  --hover-red-item: #ffa097;
+  --success: #2aa952;
+}
+
+.heading {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.modal-body {
+  padding: 0 40px 40px 40px;
+}
+
+.modal-title {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.wrapper-content-address {
+  box-sizing: border-box;
+  width: 710px;
+  height: 86px;
+  border: 1px dashed var(--grey);
+  border-radius: 8px;
+  margin-left: 20px;
+}
+
+.modalHeader,
+.modalFooter {
+  border: none;
+}
+
+.modalNewAddress {
+  width: 100%;
+  background-color: var(--white);
+  padding: 30px 0;
+  border: 1px dashed var(--grey);
+  border-radius: 8px;
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--grey);
+}
+
+.modalChangeAddress {
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--primary);
+  padding: 20px;
+  margin: 0;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--grey);
+}
+
+.subAddressModal {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.btnChangeAddress {
+  background-color: var(--white);
+  border: none;
+  color: var(--primary);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--grey);
+}
+
+.form-control {
+  width: 100%;
+}
+
+.descCheckbox {
+  font-size: 14px;
+  font-weight: 400;
+
+  color: var(--grey);
+}
+
+.btn-cancel {
+  background-color: var(--white);
+  border-radius: 20px;
+  border: 1px solid var(--grey);
+  padding: 6px 50px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-cancel:hover {
+  background-color: var(--grey);
+  color: var(--white);
+}
+
+.btn-save {
+  color: var(--white);
+  background-color: var(--primary);
+  border: none;
+  border-radius: 20px;
+  padding: 6px 50px;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.btn-save:hover {
+  color: var(--white);
+  background-color: var(--hover-red);
+}
+
+.modal-footer {
+  padding-top: 0;
+  padding-right: 35px;
+  padding-bottom: 30px;
+}
+
+.cardWrapper {
+  width: 100%;
+
+  box-shadow: 0px 0px 8px 0px rgba(115, 115, 115, 0.25);
+  padding: 30px;
+  background-color: var(--white);
+}
+
+.prices {
+  width: 100%;
+}
+
+.listCheckout {
+  width: 100%;
+  padding: 30px;
+  margin-bottom: 0;
+  box-shadow: 0px 0px 8px 0px rgba(115, 115, 115, 0.25);
+}
+
+.wrapperImgCheckbox {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+}
+
+.imgCart {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.titleHeading {
+  font-weight: 700;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.subShopping {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  margin-bottom: 0;
+}
+
+.subHeading {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-bottom: 20px !important;
+}
+
+.grandTotal {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.title-grand {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.grand-total-font {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.subAddress {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+.btnAddress {
+  height: 36px !important;
+  width: 210px !important;
+  border-radius: 24px !important;
+  border: 1px solid var(--grey) !important;
+}
+
+.btnAddress:hover {
+  background-color: var(--grey);
+  color: var(--white);
+}
+
+.wrapper {
+  height: 69px;
+  width: 70px;
+  border-radius: 8px;
+}
+
+.wrapper .image-wrapper {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+}
+
+.listCheckouts,
+.listShoppings {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listShopping {
+  padding-top: -10px;
+}
+
+.btnCheckout {
+  width: 100% !important;
+  height: 36px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  background-color: var(--primary) !important;
+  color: var(--white) !important;
+  border-radius: 25px !important;
+}
+
+.btnCheckout:hover {
+  background-color: var(--hover-red) !important;
+  color: var(--white) !important;
+}
+
+.titleProduct {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.card-text {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.textSeller {
+  font-size: 12px;
+  margin-bottom: 12px;
+}

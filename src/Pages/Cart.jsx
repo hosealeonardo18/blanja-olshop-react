@@ -1,10 +1,22 @@
 import React from 'react';
 
 import '../Assets/css/style.css';
-import img from '../Assets/images/product/1de17b40-c750-40ed-a618-ca2c5ee79da0 1.png';
+import img from '../Assets/images/product/jeans.jpg';
 import NavbarLogin from '../Components/NavbarLogin';
 import Button from '../Components/Button';
+import { useNavigate } from 'react-router-dom';
+
+const currencyFormat = (num) => {
+  return (
+    'Rp. ' +
+    Number(num)
+      .toFixed(0)
+      .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+  );
+};
+
 const Cart = () => {
+  const navigate = useNavigate();
   return (
     <>
       <header>
@@ -15,7 +27,7 @@ const Cart = () => {
           <div className="container py-4">
             <div className="row mb-4">
               <div className="col-lg-12">
-                <h2 className="title-categories fw-bold">My bag</h2>
+                <h2 className="title-categories fw-bold">My Cart</h2>
               </div>
             </div>
 
@@ -40,8 +52,8 @@ const Cart = () => {
                       </div>
 
                       <div className="wrapper-desc">
-                        <h5 className="title-product">Men's formal suit - Black & White</h5>
-                        <p className="text-seller">Zalora Cloth</p>
+                        <h5 className="title-product">Jeans Pendek Grey</h5>
+                        <p className="text-seller">Hosea Leonardo</p>
                       </div>
                     </div>
 
@@ -55,7 +67,7 @@ const Cart = () => {
                       </button>
                     </div>
 
-                    <p className="price mb-0 fw-bold">$ 20.0</p>
+                    <p className="price mb-0 fw-bold">{currencyFormat(120000)}</p>
                   </div>
                 </div>
               </div>
@@ -74,13 +86,13 @@ const Cart = () => {
                     </div>
 
                     <div className="col-6 text-end">
-                      <span className="price fw-bold">$ 40.0</span>
+                      <span className="price fw-bold">{currencyFormat(120000)}</span>
                     </div>
                   </div>
 
                   <div className="row mt-2">
                     <div className="col-12">
-                      <Button type="button" className="btn btn-login-form" children="Buy"></Button>
+                      <Button type="button" className="btn btn-login-form" children="Buy" onClick={navigate('/checkout')}></Button>
                     </div>
                   </div>
                 </div>
